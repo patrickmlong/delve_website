@@ -7,7 +7,7 @@ if (getenv('LANDO_INFO')) {
   $lando_info = json_decode(getenv('LANDO_INFO'), TRUE);
 
   $settings['trusted_host_patterns'] = ['.*'];
-#  $settings['hash_salt'] = md5(getenv('LANDO_HOST_IP'));
+  $settings['hash_salt'] = md5(getenv('LANDO_HOST_IP'));
 
   $databases['default']['default'] = array (
     'database' => $lando_info['database']['creds']['database'],
